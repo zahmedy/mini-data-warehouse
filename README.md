@@ -1,6 +1,7 @@
 # mini-data-warehouse
 Mini project to handle data storage
 
+```plaintext
 mini_data_warehouse/
 │
 ├── data/
@@ -18,3 +19,10 @@ mini_data_warehouse/
 │   └── __init__.py
 │
 └── main.py               # simple CLI or demo script to run analyses
+```
+
+## Examples of Analytics Provided
+- **Total Sales**: Calculate the total sales from the sales data.
+- **Average Order Value**: Compute the average value of orders over a specified period.
+- **Customer Segmentation**: Analyze customer data to segment them based on purchasing behavior.
+- **Monthly Trends**: Generate reports on sales trends month-over-month.
