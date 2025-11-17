@@ -1,5 +1,5 @@
 # mini-data-warehouse
-Mini project to handle data storage
+Mini project to handle data storage for e-commerce store
 
 ```plaintext
 mini_data_warehouse/
