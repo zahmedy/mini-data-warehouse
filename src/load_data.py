@@ -39,4 +39,37 @@ def load_products(csv_name: str = "products.csv"):
     finally:
         conn.close()
 
+def load_orders(csv_name: str = "orders.csv"):
+    """
+    Load orders from CSV into the orders table
+    """
+    csv_path = RAW_DATA_DIR / csv_name
+    print(f"Loading Orders data from {csv_path}")
+
+    df = pd.read_csv(csv_path)
+
+    conn = get_connection()
+
+    try:
+        df.to_sql("orders", conn, if_exists="append", index=False)
+        print("Inserted", len(df), "orders into the database.")
+    finally:
+        conn.close()
+
+def load_order_items(csv_name: str = "order_items.csv"):
+    """
+    Load orders items from CSV into the orders table
+    """
+    csv_path = RAW_DATA_DIR / csv_name
+    print(f"Loading Orders Items data from {csv_path}")
+
+    df = pd.read_csv(csv_path)
+
+    conn = get_connection()
+
+    try:
+        df.to_sql("order_items", conn, if_exists="append", index=False)
+        print("Inserted", len(df), "order_items into the database.")
+    finally:
+        conn.close()
     

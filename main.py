@@ -1,18 +1,17 @@
 from src.db import init_db, run_query
-from src.load_data import load_customers, load_products
+from src.load_data import load_customers, load_products, load_orders, load_order_items
 
 def main():
-    # 1) Initialize schema (only needed once / when you reset)
     init_db()
-
-    # 2) Load customers CSV into the warehouse
     load_customers()
-
-    # 3) load produtcs CSV into warehouse
     load_products()
+    load_orders()
+    load_order_items()
 
-    print(run_query("SELECT * FROM customers;"))
-    print(run_query("SELECT * FROM products;"))
+    print("Customers:", run_query("SELECT COUNT(*) FROM customers;"))
+    print("Products:", run_query("SELECT COUNT(*) FROM products;"))
+    print("Orders:", run_query("SELECT COUNT(*) FROM orders;"))
+    print("Order items:", run_query("SELECT COUNT(*) FROM order_items;"))
 
 if __name__ == "__main__":
     main()

@@ -1,0 +1,6 @@
+order_id,customer_id,order_date,order_status
+1,1,2023-01-05,paid
+2,2,2023-01-10,paid
+3,1,2023-02-01,refunded
+4,3,2023-02-15,paid
+5,4,2023-03-01,paid
